@@ -2,6 +2,7 @@ import { Module } from '@nestjs/common';
 import { ConfigModule } from '@nestjs/config';
 
 import { ChatModule } from './modules/chat/chat.module';
+import { EmbeddingModule } from './modules/embedding/embedding.module';
 
 @Module({
   imports: [
@@ -10,6 +11,7 @@ import { ChatModule } from './modules/chat/chat.module';
     }),
 
     ChatModule,
+    EmbeddingModule,
   ],
 })
 export class AppModule {}
