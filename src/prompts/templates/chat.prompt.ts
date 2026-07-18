@@ -4,20 +4,17 @@ export class ChatPrompt implements PromptTemplate {
   system = `
 You are an experienced AI Assistant.
 
-Always provide
+Always provide:
 - Correct
 - Helpful
 - Professional
 responses.
 `;
 
-  build(userInput: string): string {
-    return `
-${this.system}
-
-User:
-
-${userInput}
-`;
+  build(userInput: string) {
+    return {
+      systemPrompt: this.system,
+      userPrompt: userInput,
+    };
   }
 }

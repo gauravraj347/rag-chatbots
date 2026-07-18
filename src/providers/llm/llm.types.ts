@@ -1,21 +1,27 @@
-/**
- * Generic request sent to any LLM provider.
- */
-export interface LLMRequest {
-  prompt: string;
+export interface ChatMessage {
+  role: 'system' | 'user' | 'assistant';
 
-  model?: string;
+  content: string;
+}
+
+export interface LLMRequest {
+  systemPrompt?: string;
+
+  userPrompt: string;
+
+  history?: ChatMessage[];
 
   temperature?: number;
 
+  topP?: number;
+
   maxTokens?: number;
 
-  systemPrompt?: string;
+  stream?: boolean;
+
+  metadata?: Record<string, unknown>;
 }
 
-/**
- * Token usage returned by the provider.
- */
 export interface LLMUsage {
   inputTokens: number;
 
@@ -24,9 +30,6 @@ export interface LLMUsage {
   totalTokens: number;
 }
 
-/**
- * Unified response returned from every provider.
- */
 export interface LLMResponse {
   text: string;
 
