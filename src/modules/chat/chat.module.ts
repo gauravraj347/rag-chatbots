@@ -3,17 +3,13 @@ import { Module } from '@nestjs/common';
 import { ChatController } from './chat.controller';
 import { ChatService } from './chat.service';
 
-import { GeminiModule } from '../../providers/gemini/gemini.module';
-import { PromptModule } from '../../prompts/prompt.module';
-import { MemoryModule } from '../memory/memory.module';
+import { ConversationModule } from '../conversation/conversation.module';
 
 @Module({
   imports: [
-    GeminiModule,
-    PromptModule,
-    MemoryModule,
+    ConversationModule,
   ],
   controllers: [ChatController],
   providers: [ChatService],
 })
-export class ChatModule { }
+export class ChatModule {}
