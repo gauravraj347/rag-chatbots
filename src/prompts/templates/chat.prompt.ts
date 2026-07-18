@@ -1,20 +1,21 @@
-import { PromptTemplate } from './interfaces/prompt.interface';
+import {
+  PromptResult,
+  PromptTemplate,
+} from './interfaces/prompt.interface';
 
-export class ChatPrompt implements PromptTemplate {
-  system = `
-You are an experienced AI Assistant.
+interface ChatPromptInput {
+  question: string;
+}
 
-Always provide:
-- Correct
-- Helpful
-- Professional
-responses.
-`;
+export const ChatPrompt: PromptTemplate<ChatPromptInput> = {
+  system: `
+You are a helpful AI assistant.
+`,
 
-  build(userInput: string) {
+  build(input): PromptResult {
     return {
       systemPrompt: this.system,
-      userPrompt: userInput,
+      userPrompt: input.question,
     };
-  }
-}
+  },
+};

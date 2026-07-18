@@ -1,6 +1,6 @@
 import { Injectable } from '@nestjs/common';
 
-import { VectorDocument } from '../../vector/vector.types';
+import { VectorDocument } from '../../providers/vector/vector.types';
 
 @Injectable()
 export class ContextService {

@@ -2,8 +2,8 @@ import { Injectable } from '@nestjs/common';
 
 import { EmbeddingGateway } from '../../providers/embedding/embedding.gateway';
 
-import { VectorRepository } from '../../vector/vector.repository';
-import { VectorGateway } from '../../vector/vector.gateway';
+import { VectorRepository } from '../../providers/vector/vector.repository';
+import { VectorGateway } from '../../providers/vector/vector.gateway';
 
 @Injectable()
 export class RetrievalService {

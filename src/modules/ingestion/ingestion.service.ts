@@ -5,8 +5,8 @@ import { ChunkingService } from '../chunking/chunking.service';
 
 import { EmbeddingGateway } from '../../providers/embedding/embedding.gateway';
 
-import { InMemoryVectorRepository } from '../../vector/in-memory-vector.repository';
-import { VectorDocument } from '../../vector/vector.types';
+import { InMemoryVectorRepository } from '../../providers/vector/in-memory-vector.repository';
+import { VectorDocument } from '../../providers/vector/vector.types';
 
 @Injectable()
 export class IngestionService {

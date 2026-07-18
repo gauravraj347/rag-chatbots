@@ -1,12 +1,20 @@
 import { Injectable } from '@nestjs/common';
 
 import { ChatPrompt } from './templates/chat.prompt';
+import { RagPrompt } from './templates/rag.prompt';
 
 @Injectable()
 export class PromptService {
-  private readonly chatPrompt = new ChatPrompt();
+  chat(question: string) {
+    return ChatPrompt.build({
+      question,
+    });
+  }
 
-  chat(userInput: string) {
-    return this.chatPrompt.build(userInput);
+  rag(context: string, question: string) {
+    return RagPrompt.build({
+      context,
+      question,
+    });
   }
 }
