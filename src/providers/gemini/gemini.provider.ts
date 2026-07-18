@@ -24,7 +24,7 @@ export class GeminiProvider implements LLMProvider {
 
     this.model =
       this.configService.get<string>('GEMINI_MODEL') ??
-      'gemini-2.5-flash';
+      'gemini-3.5-flash';
 
     this.client = new GoogleGenAI({
       apiKey,
